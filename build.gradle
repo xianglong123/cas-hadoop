@@ -1,0 +1,32 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'io.freefair.lombok' version '5.0.0-rc6' apply false
+}
+
+group 'com.cas'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    maven {
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    maven {
+        url 'https://repo1.maven.org/maven2/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    // 基本
+    implementation 'org.apache.hadoop:hadoop-client:3.3.1'
+    implementation 'com.alibaba:fastjson:1.2.61'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.projectlombok:lombok:1.18.12"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
